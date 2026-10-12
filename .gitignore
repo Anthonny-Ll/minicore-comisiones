@@ -1,0 +1,7 @@
+venv/
+__pycache__/
+*.pyc
+backend/minicore.db
+frontend/node_modules/
+frontend/dist/
+docs/

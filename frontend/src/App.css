@@ -1,0 +1,30 @@
+:root {
+  --fondo: #f4f5f7; --tarjeta: #fff; --texto: #1d2330; --suave: #646b7a;
+  --borde: #e2e5ea; --acento: #1f6feb; --comision: #b42318; --error-bg: #fdecea;
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  color: var(--texto); background: var(--fondo);
+}
+* { box-sizing: border-box; }
+body { margin: 0; }
+.pagina { max-width: 960px; margin: 0 auto; padding: 32px 16px 64px; }
+h1 { margin: 0 0 6px; font-size: 1.7rem; }
+h2 { margin: 0 0 14px; font-size: 1.1rem; }
+.sub { margin: 0 0 24px; color: var(--suave); }
+.tarjeta { background: var(--tarjeta); border: 1px solid var(--borde); border-radius: 10px; padding: 20px; margin-bottom: 18px; overflow-x: auto; }
+.filtro { display: flex; flex-wrap: wrap; gap: 14px; align-items: flex-end; }
+label { display: flex; flex-direction: column; gap: 6px; font-size: .9rem; color: var(--suave); }
+input[type=date] { padding: 8px 10px; border: 1px solid var(--borde); border-radius: 6px; font: inherit; color: var(--texto); }
+button { padding: 9px 18px; border: 0; border-radius: 6px; background: var(--acento); color: #fff; font: inherit; font-weight: 600; cursor: pointer; }
+button:disabled { opacity: .6; cursor: wait; }
+.error { margin: 14px 0 0; padding: 10px 12px; background: var(--error-bg); color: var(--comision); border-radius: 6px; }
+.reglas { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 10px; }
+.regla { display: flex; flex-direction: column; gap: 4px; padding: 12px; border: 1px solid var(--borde); border-radius: 8px; }
+.regla span { color: var(--suave); font-size: .9rem; }
+.badge { align-self: flex-start; background: #e8f0fe; color: var(--acento) !important; font-weight: 700; padding: 2px 8px; border-radius: 999px; }
+table { width: 100%; border-collapse: collapse; font-size: .95rem; }
+th, td { padding: 9px 10px; border-bottom: 1px solid var(--borde); text-align: left; white-space: nowrap; }
+th { color: var(--suave); font-weight: 600; font-size: .85rem; }
+.num { text-align: right; font-variant-numeric: tabular-nums; }
+.comision { color: var(--comision); font-weight: 700; }
+tfoot td { font-weight: 700; border-bottom: 0; }
+.sin { color: var(--suave); font-style: italic; }
