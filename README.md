@@ -70,22 +70,6 @@ Abre http://localhost:5173. La documentación interactiva de la API está en htt
 
 La primera vez se crea `backend/minicore.db` con los datos de prueba (ventas de agosto a octubre de 2026). Para empezar de cero, borra ese archivo.
 
-## API
-
-- `GET /api/comisiones?fecha_inicio=2026-09-01&fecha_fin=2026-09-30`: el cálculo de comisiones
-- `GET /api/ventas?fecha_inicio=...&fecha_fin=...`: el detalle de ventas en el rango
-- `GET /api/vendedores` y `GET /api/reglas`
-
-Si la fecha fin es menor que la fecha inicio, la API responde con un error 400.
-
-## Deploy en Render (un solo servicio)
-
-Crea un **Web Service** en Render con el entorno Python y estos valores:
-
-- **Build Command:** `cd frontend && npm install && npm run build && cd ../backend && pip install -r requirements.txt`
-- **Start Command:** `cd backend && uvicorn app.main:app --host 0.0.0.0 --port $PORT`
-
-FastAPI sirve la página de React ya compilada (`frontend/dist`) y la API desde la misma URL.
 
 ## Autor
 
