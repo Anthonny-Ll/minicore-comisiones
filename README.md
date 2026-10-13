@@ -70,6 +70,31 @@ Abre http://localhost:5173. La documentación interactiva de la API está en htt
 
 La primera vez se crea `backend/minicore.db` con los datos de prueba (ventas de agosto a octubre de 2026). Para empezar de cero, borra ese archivo.
 
+<<<<<<< HEAD
+=======
+## API
+
+- `GET /api/comisiones?fecha_inicio=2026-09-01&fecha_fin=2026-09-30`: el cálculo de comisiones
+- `GET /api/ventas?fecha_inicio=...&fecha_fin=...`: el detalle de ventas en el rango
+- `GET /api/vendedores` y `GET /api/reglas`
+
+Si la fecha fin es menor que la fecha inicio, la API responde con un error 400.
+
+## Deploy en Render
+
+El repositorio incluye `render.yaml`, así que Render lee la configuración solo:
+
+1. En https://render.com entra con tu cuenta de GitHub.
+2. **New → Blueprint** y elige este repositorio.
+3. Pulsa **Apply / Deploy Blueprint** y espera a que el build termine (unos 3 a 5 minutos).
+
+Si prefieres crearlo a mano (**New → Web Service**, entorno Python):
+
+- **Build Command:** `cd frontend && npm install --include=dev && npm run build && cd ../backend && pip install -r requirements.txt`
+- **Start Command:** `cd backend && uvicorn app.main:app --host 0.0.0.0 --port $PORT`
+
+FastAPI sirve la página de React ya compilada (`frontend/dist`) y la API desde la misma URL. La versión de Python está fijada en `.python-version`.
+>>>>>>> 6a2ccdd (Configuración para deploy en Render)
 
 ## Autor
 
